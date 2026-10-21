@@ -15,7 +15,8 @@ export class App {
   readonly github = 'https://github.com/vishalnsin';
   readonly linkedin = 'https://linkedin.com/in/vishal-narayan-singh-64488225b/';
   // readonly resume = '/assets/Vishal Resume.pdf';
-  readonly resume = '/assets/Vishal_Resume.pdf';
+  readonly resume = '/Vishal_Narayan_Singh_NZ_Resume.pdf';
+
 
   menuOpen = false;
   theme: 'light' | 'dark' = 'light';

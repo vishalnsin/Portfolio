@@ -2,11 +2,16 @@
 
 <header class="bar">
   <div class="wrap bar-inner">
-    <a routerLink="/" class="brand" aria-label="Vishal Narayan Singh, home">
+    <!-- <a routerLink="/" class="brand" aria-label="Vishal Narayan Singh, home">
       <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
         <rect width="64" height="64" rx="14" fill="var(--accent)" />
         <path d="M14 16l18 32 18-32" fill="none" stroke="var(--signal)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
+      <span>{{ name }}</span>
+    </a> -->
+
+    <a routerLink="/" class="brand" aria-label="Vishal Narayan Singh, home">
+      <img class="brand-img" src="/profile.jpg" alt="Vishal Narayan Singh" width="36" height="36" />
       <span>{{ name }}</span>
     </a>
 
@@ -45,6 +50,7 @@
       <a [href]="linkedin" target="_blank" rel="noopener">LinkedIn</a>
       <a [href]="'mailto:' + email">Email</a>
       <!-- <a [href]="resume" download>Resume</a> -->
+      <!-- <a [href]="resume" download="Vishal_Narayan_Singh_Resume.pdf">Resume</a> -->
        <a [href]="resume" download="Vishal_Narayan_Singh_Resume.pdf">Resume</a>
     </p>
   </div>

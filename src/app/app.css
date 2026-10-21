@@ -165,3 +165,12 @@ nav a.active {
     font-size: 0.95rem;
   }
 }
+
+.brand-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--signal);
+}

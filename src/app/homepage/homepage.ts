@@ -19,7 +19,8 @@ export class Homepage implements OnInit {
     email: 'vishalnarayansingh12@gmail.com',
     github: 'https://github.com/vishalnsin',
     linkedin: 'https://linkedin.com/in/vishal-narayan-singh-64488225b/',
-    resume: '/Vishal_Resume.pdf',
+    // resume: '/Vishal_Resume.pdf',
+    resume: '/Vishal_Narayan_Singh_NZ_Resume.pdf',
     headline: 'I build the software that keeps mines moving.',
     intro:
       'Java, Spring Boot and Angular developer at Minedge. I design REST APIs and dashboards for trip tracking, fuel and garage operations, with secure access and fast data retrieval.',
