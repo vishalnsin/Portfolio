@@ -1,0 +1,240 @@
+:host {
+  display: block;
+  #about,
+  #experience,
+  #study,
+  #contact {
+    scroll-margin-top: calc(var(--header-h) + 8px);
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding-block: clamp(2.5rem, 8vw, 6rem);
+}
+.where {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.9rem, 5.5vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.intro {
+  margin: 0 0 1.75rem;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+
+/* ---------- Mining shaft card ---------- */
+.shaft {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+.shaft-title {
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+.shaft ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.shaft li {
+  display: grid;
+  grid-template-columns: 6px auto 1fr;
+  align-items: center;
+  gap: 0.2rem 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  animation: drop 0.5s ease both;
+  animation-delay: calc(var(--d, 0) * 120ms);
+}
+.shaft li span:last-child {
+  color: var(--muted);
+  min-width: 0;
+}
+.band {
+  align-self: stretch;
+  border-radius: 3px;
+  background: var(--signal);
+}
+.shaft-foot {
+  margin: 1rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- About / skills ---------- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+.skill-group h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.skill-group p,
+.stack {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+.timeline > li {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.when {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.what h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.company {
+  margin: 0.15rem 0 0.9rem;
+  color: var(--muted);
+}
+.points {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* ---------- Education ---------- */
+.edu {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+.edu li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.edu h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+.edu p {
+  margin: 0;
+  color: var(--muted);
+}
+.edu-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+.edu-meta strong {
+  color: var(--text);
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  text-align: center;
+}
+.contact .section-lead {
+  margin-inline: auto;
+}
+.contact .cta {
+  justify-content: center;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .timeline > li {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  .edu li {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .edu-meta {
+    align-items: flex-start;
+    text-align: left;
+    white-space: normal;
+  }
+  .shaft li {
+    grid-template-columns: 6px 1fr;
+  }
+  .shaft li span:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shaft li {
+    animation: none;
+  }
+}

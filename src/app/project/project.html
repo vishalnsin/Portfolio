@@ -1,0 +1,59 @@
+<section class="wrap page">
+  <h1>Projects</h1>
+  <p class="lead">Work projects and personal builds, with the features, engineering choices and results for each.</p>
+
+  <div class="filters" role="group" aria-label="Filter projects">
+    @for (f of filters; track f) {
+      <button type="button" [class.on]="active() === f" [attr.aria-pressed]="active() === f" (click)="active.set(f)">{{ f }}</button>
+    }
+  </div>
+
+  @for (p of list(); track p.id) {
+    <article class="project" [id]="p.id">
+      <header>
+        <p class="kind">{{ p.kind }} project, {{ p.period }}</p>
+        <h2>{{ p.title }}</h2>
+        <p class="overview">{{ p.overview }}</p>
+      </header>
+
+      <div class="facts">
+        <div>
+          <h3>My role</h3>
+          <p>{{ p.role }}</p>
+        </div>
+        <div>
+          <h3>Tech stack</h3>
+          <p>
+            @for (s of p.stack; track s) {
+              <span class="tag">{{ s }}</span>
+            }
+          </p>
+        </div>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>Features</h3>
+          <ul class="list">
+            @for (f of p.features; track f) { <li>{{ f }}</li> }
+          </ul>
+        </div>
+        <div>
+          <h3>Engineering</h3>
+          <ul class="list">
+            @for (e of p.engineering; track e) { <li>{{ e }}</li> }
+          </ul>
+        </div>
+      </div>
+
+      <h3>Results</h3>
+      <ul class="results">
+        @for (r of p.results; track r) { <li>{{ r }}</li> }
+      </ul>
+
+      @if (p.github) {
+        <a class="btn" [href]="p.github" target="_blank" rel="noopener">View code on GitHub</a>
+      }
+    </article>
+  }
+</section>

@@ -1,1 +1,97 @@
-<p>homepage works!</p>
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="where">{{ p.role }}, {{ p.location }}</p>
+    <h1>{{ p.headline }}</h1>
+    <p class="intro">{{ p.intro }}</p>
+    <div class="cta">
+      <a class="btn" routerLink="/projects">View projects</a>
+      <a class="btn ghost" [href]="p.resume" download>Download resume</a>
+    </div>
+  </div>
+
+  <aside class="shaft" aria-label="Modules of the Mining Management System">
+    <p class="shaft-title">Mining Management System</p>
+    <ul>
+      @for (m of modules; track m.name; let i = $index) {
+        <li [style.--d]="i">
+          <span class="band"></span>
+          <strong>{{ m.name }}</strong>
+          <span>{{ m.note }}</span>
+        </li>
+      }
+    </ul>
+    <p class="shaft-foot">API response time −30% · downtime −25%</p>
+  </aside>
+</section>
+
+<section class="section wrap" id="about">
+  <h2 class="section-title">About</h2>
+  <p class="section-lead">{{ p.about }}</p>
+  <div class="skills">
+    @for (g of skills; track g.group) {
+      <div class="skill-group">
+        <h3>{{ g.group }}</h3>
+        <p>
+          @for (s of g.items; track s) {
+            <span class="tag">{{ s }}</span>
+          }
+        </p>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section wrap" id="experience">
+  <h2 class="section-title">Work history</h2>
+  <p class="section-lead">Where I have worked, newest first.</p>
+  <ol class="timeline">
+    @for (j of jobs; track j.company) {
+      <li>
+        <div class="when">{{ j.period }}</div>
+        <div class="what">
+          <h3>{{ j.role }}</h3>
+          <p class="company">{{ j.company }}</p>
+          <ul class="points">
+            @for (pt of j.points; track pt) {
+              <li>{{ pt }}</li>
+            }
+          </ul>
+          <p class="stack">
+            @for (s of j.stack; track s) {
+              <span class="tag">{{ s }}</span>
+            }
+          </p>
+        </div>
+      </li>
+    }
+  </ol>
+</section>
+
+<section class="section wrap" id="study">
+  <h2 class="section-title">Study</h2>
+  <p class="section-lead">My education, newest first.</p>
+  <ul class="edu">
+    @for (e of education; track e.school) {
+      <li>
+        <div>
+          <h3>{{ e.degree }}</h3>
+          <p>{{ e.school }}</p>
+        </div>
+        <div class="edu-meta">
+          <span>{{ e.period }}</span>
+          <strong>{{ e.score }}</strong>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section wrap contact" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-lead">Open to full-stack Java and Angular roles. Email is the fastest way to reach me.</p>
+  <div class="cta">
+    <a class="btn" [href]="'mailto:' + p.email">{{ p.email }}</a>
+    <a class="btn ghost" [href]="p.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" [href]="p.github" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>

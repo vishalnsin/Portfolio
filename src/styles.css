@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --text: #13181f;
+  --muted: #5b6573;
+  --line: #e2e7ed;
+  --accent: #0f3d3e;
+  --signal: #f5b942;
+  --radius: 14px;
+  --header-h: 64px;
+}
+
+[data-theme='dark'] {
+  --bg: #0e1216;
+  --surface: #161b21;
+  --text: #e8ecf1;
+  --muted: #9aa5b3;
+  --line: #262d36;
+  --accent: #1f6f6b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+
+.section-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+
+.section-lead {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.btn:hover {
+  filter: brightness(1.12);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.btn.ghost:hover {
+  background: var(--surface);
+  filter: none;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .cta .btn {
+    flex: 1 1 100%;
+  }
+}
